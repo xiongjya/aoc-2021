@@ -14,7 +14,7 @@ olst = lines
 clst = lines
 
 
-def narrowDown(index, counter, lst, arr, isOxygen):
+def narrow_down(index, counter, lst, arr, is_oxygen):
     if len(lst) == 1:
         return lst
 
@@ -28,9 +28,9 @@ def narrowDown(index, counter, lst, arr, isOxygen):
     half = counter / 2
 
     if arr[index] >= half:
-        arr[index] = isOxygen
+        arr[index] = is_oxygen
     else:
-        arr[index] = (1 - isOxygen)
+        arr[index] = (1 - is_oxygen)
 
     filtered = filter(lambda y: int(y[index]) == arr[index], lst)
 
@@ -41,14 +41,14 @@ for i in range(0, n):
     onum = 0
     cnum = 0
 
-    olst = narrowDown(i, onum, olst, ocount, 1)
-    clst = narrowDown(i, cnum, clst, ccount, 0)
+    olst = narrow_down(i, onum, olst, ocount, 1)
+    clst = narrow_down(i, cnum, clst, ccount, 0)
 
 oxygen = int(olst[0], 2)
 carbon = int(clst[0], 2)
 
-lifeSupport = oxygen * carbon
+life_support = oxygen * carbon
 
 print("oxygen: {}".format(oxygen))
 print("carbon: {}".format(carbon))
-print("life support rating: {}".format(lifeSupport))
+print("life support rating: {}".format(life_support))

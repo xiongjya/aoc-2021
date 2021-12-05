@@ -75,7 +75,7 @@ def solve(puzzle, number):
     print(product)
 
 
-notSolved = list(range(0, len(puzzles)))
+not_solved = list(range(0, len(puzzles)))
 solved = False
 index = 0
 
@@ -91,10 +91,10 @@ for n in numbers:
         if found:
             bingo = check(p)
 
-            if bingo and index in notSolved:
-                notSolved.remove(index)
+            if bingo and index in not_solved:
+                not_solved.remove(index)
 
-                if len(notSolved) == 0:
+                if len(not_solved) == 0:
                     solve(p, n)
                     solved = True
                     break
