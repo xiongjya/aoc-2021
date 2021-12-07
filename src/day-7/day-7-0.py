@@ -1,13 +1,10 @@
-import sys
+import statistics
 
 file = open("input/day-7-input.txt")
 lines = file.readlines()[0]
 
 crabs = [int(crab) for crab in lines.split(",")]
-fuel_consumption = sys.maxsize
-
-for r in range(min(crabs), max(crabs) + 1):
-    i = sum(map(lambda crab : abs(crab - r), crabs))
-    fuel_consumption = min(i, fuel_consumption)
+med = statistics.median(crabs)
+fuel_consumption = int(sum(map(lambda crab : abs(crab - med), crabs)))
 
 print("fuel consumption: {}".format(fuel_consumption))
