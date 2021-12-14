@@ -16,7 +16,7 @@ for c in string:
     letter_count[ord(c) - 65] += 1
 
 step = 0
-while step < 40:
+while step < 40:    # part 1: step < 10
     updated_pattern = {key: 0 for key in template}
 
     for key in pattern_count:
